@@ -1,0 +1,385 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Adjust transparency here */
+    z-index: -1;
+}
+
+.header {
+    height: 600px; /* Adjust height as needed */
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: left; /* Align text to the left */
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency here */
+    z-index: 1;
+}
+
+.header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header p.lead {
+    font-size: 1.5em;
+    margin: 10px 0 20px 0;
+}
+
+.header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Button Styles */
+.btn-lg, .btn-primary, .btn-warning {
+    display: block;
+    justify-content: center;
+    width: 200px; /* Adjust as needed */
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background-color: #de1912; /* Default background color */
+    border-color: #de1912; /* Default border color */
+    color: white; /* Text color */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-lg:hover, .btn-primary:hover, .btn-warning:hover {
+    background-color: #0056b3; /* Change background to blue on hover */
+    color: white; /* Ensure text remains white */
+    transform: scale(1.1); /* Scale the button up to 1.1 times its original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
+}
+
+/* Background Image Animation */
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    50% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.header .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: fade 20s infinite; /* Adjust the duration */
+}
+
+.header .background.bg1 {
+    background-image: url('../images/header-background.jpg');
+}
+
+.header .background.bg2 {
+    background-image: url('../images/electrician-1080554_1280.jpg');
+    animation-delay: 10s; /* Adjust the delay */
+}
+
+.banner {
+    position: absolute;
+    bottom: .5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 80%; /* Adjust as needed */
+    z-index: 3;
+}
+
+.banner .banner-text {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-text .text-center {
+    margin: 0 10px;
+}
+
+.banner h3 {
+    margin: 10px 0;
+}
+
+.banner p {
+    margin: 10px 0;
+    font-size: 0.8em; /* Reduced by 50% */
+}
+
+/* Who We Are Section */
+.who-we-are {
+    background-color: #f8f9fa;
+}
+
+.who-we-are img {
+    width: 130%; /* Increase size by 30% */
+    height: 500px;
+    border-radius: 8px;
+}
+
+.who-we-are-content {
+    padding-left: 20px; /* Adjust as needed */
+}
+
+.who-we-are h2 {
+    font-size: 1em;
+    font-weight: normal; /* Adjusted to remove the empty property */
+    color: #181a1c;
+}
+
+.who-we-are p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.who-we-are h4 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #181a1c;
+}
+
+.horizontal-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.horizontal-list li {
+    margin: 0 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.who-we-are .btn {
+    background-color: #de1912; /* Default background color */
+    border-color: #de1912; /* Default border color */
+    color: white; /* Text color */
+    border-radius: 8px;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.who-we-are .btn:hover {
+    background-color: #0056b3; /* Change background to blue on hover */
+    color: white; /* Ensure text remains white */
+    transform: scale(1.1); /* Scale the button up to 1.1 times its original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #007bff;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #0056b3;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #007bff;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-item .nav-link:active {
+    color: #fff;
+    background-color: #0056b3;
+    border-radius: 8px;
+}
+
+.navbar-toggler {
+    border-color: #007bff;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    color: #007bff;
+}
+
+/* Services Section */
+.services {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.services .card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.services .card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.services .card-text {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.services .btn {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background-color: #de1912; /* Default background color */
+    border-color: #de1912; /* Default border color */
+    color: white; /* Text color */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .btn:hover {
+    background-color: #0056b3; /* Change background to blue on hover */
+    color: white; /* Ensure text remains white */
+    transform: scale(1.1); /* Scale the button up to 1.1 times its original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
+}
+
+.contact {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.contact h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.contact form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact form .form-control {
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 1.1em;
+    padding: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.contact form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.contact form .btn {
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background-color: #de1912; /* Default background color */
+    border-color: #de1912; /* Default border color */
+    color: white; /* Text color */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact form .btn:hover {
+    background-color: #0056b3; /* Change background to blue on hover */
+    color: white; /* Ensure text remains white */
+    transform: scale(1.1); /* Scale the button up to 1.1 times its original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer h2, .footer h3 {
+    margin: 0 0 10px 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin: 5px 0;
+}
+
+.footer p {
+    margin: 5px 0;
+}
