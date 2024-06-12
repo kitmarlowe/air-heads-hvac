@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -21,11 +21,11 @@ body::before {
 
 .header {
     height: 600px; /* Adjust height as needed */
-    position: relative;
+    position: relative; /* Ensure the header is positioned relative */
     overflow: hidden;
     color: white;
     text-align: left; /* Align text to the left */
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    z-index: 2; /* Ensure header is above images */
 }
 
 .header::before {
@@ -41,7 +41,7 @@ body::before {
 
 .header .container {
     position: relative;
-    z-index: 2;
+    z-index: 3; /* Ensure container is above the header */
 }
 
 .header h1 {
@@ -59,6 +59,13 @@ body::before {
 .header p {
     font-size: 1.2em;
     margin: 10px 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    z-index: 4; /* Ensure navbar is on top of all other elements */
+    margin-top: -25px; /* Move the navbar to the very top */
+    position: relative;
 }
 
 /* Button Styles */
@@ -92,7 +99,7 @@ body::before {
     100% { opacity: 0; }
 }
 
-.header .background {
+.header .background, .who-we-are-images .background {
     position: absolute;
     top: 0;
     left: 0;
@@ -101,6 +108,7 @@ body::before {
     background-size: cover;
     background-position: center;
     animation: fade 20s infinite; /* Adjust the duration */
+    z-index: 1; /* Ensure background is behind header elements */
 }
 
 .header .background.bg1 {
@@ -112,37 +120,66 @@ body::before {
     animation-delay: 10s; /* Adjust the delay */
 }
 
-.banner {
-    position: absolute;
-    bottom: .5em;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 80%; /* Adjust as needed */
-    z-index: 3;
+.who-we-are-images .background.img1 {
+    background-image: url('../images/heat-pump.jpeg');
 }
 
-.banner .banner-text {
+.who-we-are-images .background.img2 {
+    background-image: url('../images/heat-pump1.jpeg');
+    animation-delay: 7s; /* Adjust the delay */
+}
+
+.who-we-are-images .background.img3 {
+    background-image: url('../images/heat-pump3.jpeg');
+    animation-delay: 12s; /* Adjust the delay */
+}
+
+.who-we-are-images {
+    position: relative;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Add a more prominent shadow */
+    padding: 10px; /* Add some padding */
+    background-color: #fff; /* Add a background color */
+}
+
+/* Banner Section */
+.banner-section {
+    padding-top: 50px; /* Adjust this value to control the space between header and banner */
+}
+
+.banner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.banner .card {
     background-color: white;
     color: black;
     padding: 20px;
     border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 20px); /* Responsive three columns */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.banner-text .text-center {
-    margin: 0 10px;
+.banner .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.banner h3 {
-    margin: 10px 0;
-}
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+    }
 
-.banner p {
-    margin: 10px 0;
-    font-size: 0.8em; /* Reduced by 50% */
+    .banner .card {
+        flex: 1 1 100%; /* Stack cards on small screens */
+    }
 }
 
 /* Who We Are Section */
@@ -162,7 +199,7 @@ body::before {
 
 .who-we-are h2 {
     font-size: 1em;
-    font-weight: normal; /* Adjusted to remove the empty property */
+    font-weight: ;
     color: #181a1c;
 }
 
@@ -190,6 +227,10 @@ body::before {
     color: #333;
 }
 
+.horizontal-list li i {
+    color: #333; /* Reverted icon color to default */
+}
+
 .who-we-are .btn {
     background-color: #de1912; /* Default background color */
     border-color: #de1912; /* Default border color */
@@ -205,51 +246,6 @@ body::before {
     color: white; /* Ensure text remains white */
     transform: scale(1.1); /* Scale the button up to 1.1 times its original size */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
-}
-
-/* Navigation Styles */
-.navbar {
-    background-color: #fff;
-    border-bottom: 2px solid #007bff;
-}
-
-.navbar-brand {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #007bff;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-    color: #0056b3;
-}
-
-.navbar-nav .nav-item .nav-link {
-    color: #007bff;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 8px;
-}
-
-.navbar-nav .nav-item .nav-link:active {
-    color: #fff;
-    background-color: #0056b3;
-    border-radius: 8px;
-}
-
-.navbar-toggler {
-    border-color: #007bff;
-}
-
-.navbar-toggler .navbar-toggler-icon {
-    color: #007bff;
 }
 
 /* Services Section */
@@ -277,6 +273,7 @@ body::before {
     font-weight: bold;
     color: black;
     margin-bottom: 15px;
+    box-shadow: #181a1c;
 }
 
 .services .card-text {
