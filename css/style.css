@@ -19,6 +19,7 @@ body::before {
     z-index: -1;
 }
 
+/* Header Styles */
 .header {
     height: 600px; /* Adjust height as needed */
     position: relative; /* Ensure the header is positioned relative */
@@ -49,16 +50,19 @@ body::before {
     font-size: 3em;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add drop shadow */
 }
 
 .header p.lead {
     font-size: 1.5em;
     margin: 10px 0 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add drop shadow */
 }
 
 .header p {
     font-size: 1.2em;
     margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add drop shadow */
 }
 
 /* Navbar Styles */
@@ -120,6 +124,11 @@ body::before {
     animation-delay: 10s; /* Adjust the delay */
 }
 
+/* Who We Are Section */
+.who-we-are {
+    background-color: #f8f9fa;
+}
+
 .who-we-are-images .background.img1 {
     background-image: url('../images/heat-pump.jpeg');
 }
@@ -142,6 +151,33 @@ body::before {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Add a more prominent shadow */
     padding: 10px; /* Add some padding */
     background-color: #fff; /* Add a background color */
+}
+
+.who-we-are-content ul.horizontal-list li i {
+    color: red; /* Change the color of the icons to red */
+}
+
+.who-we-are-content h2 {
+    font-size: 1.5em;
+    font-weight: bolder; /* Make h2 bolder */
+    color: #181a1c;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add drop shadow */
+}
+
+.who-we-are h2 {
+    font-size: 1em;
+    font-weight: ; /* This line is incomplete and can be removed if not used */
+    color: #181a1c;
+}
+
+.who-we-are p {
+    font-size: 1.1em;
+    color: black;
+}
+
+.who-we-are h4 {
+    font-size: 1.8em;
+    color: #181a1c;
 }
 
 /* Banner Section */
@@ -180,38 +216,6 @@ body::before {
     .banner .card {
         flex: 1 1 100%; /* Stack cards on small screens */
     }
-}
-
-/* Who We Are Section */
-.who-we-are {
-    background-color: #f8f9fa;
-}
-
-.who-we-are img {
-    width: 130%; /* Increase size by 30% */
-    height: 500px;
-    border-radius: 8px;
-}
-
-.who-we-are-content {
-    padding-left: 20px; /* Adjust as needed */
-}
-
-.who-we-are h2 {
-    font-size: 1em;
-    font-weight: ;
-    color: #181a1c;
-}
-
-.who-we-are p {
-    font-size: 1.1em;
-    color: #555;
-}
-
-.who-we-are h4 {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #181a1c;
 }
 
 .horizontal-list {
@@ -273,7 +277,6 @@ body::before {
     font-weight: bold;
     color: black;
     margin-bottom: 15px;
-    box-shadow: #181a1c;
 }
 
 .services .card-text {
@@ -301,37 +304,39 @@ body::before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
 }
 
+/* Contact Section */
 .contact {
-    padding: 40px 0;
     background-color: #f8f9fa;
+    padding: 40px 0;
 }
 
 .contact h2 {
     margin-bottom: 30px;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
-    color: #007bff;
+    color: #333; /* Subtle color */
 }
 
 .contact form {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact form:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact form .form-control {
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: none;
-    font-size: 1.1em;
-    padding: 15px;
+    font-size: 1em;
+    padding: 10px;
     transition: border-color 0.3s ease;
+    border: 1px solid #ccc; /* Subtle border */
 }
 
 .contact form .form-control:focus {
@@ -340,23 +345,24 @@ body::before {
 }
 
 .contact form .btn {
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: none;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 10px 20px;
-    background-color: #de1912; /* Default background color */
-    border-color: #de1912; /* Default border color */
+    background-color: #333; /* Subtle color */
+    border-color: #333; /* Subtle color */
     color: white; /* Text color */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact form .btn:hover {
-    background-color: #0056b3; /* Change background to blue on hover */
+    background-color: #555; /* Slightly darker on hover */
     color: white; /* Ensure text remains white */
-    transform: scale(1.1); /* Scale the button up to 1.1 times its original size */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for a popping effect */
+    transform: scale(1.02); /* Subtle scale on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Footer Section */
 .footer {
     background-color: #333;
     color: white;
